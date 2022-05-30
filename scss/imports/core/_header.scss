@@ -1,0 +1,132 @@
+// css header
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 300;
+    height: $height-header;
+    &.active {
+        background: $black-cl;
+        @include transition(background 0.3s);
+    }
+    .container-fluid {
+        @include flexSB;
+        align-items: center;
+        height: 100%;
+        ul {
+            height: 100%;
+            @include midX;
+            display: flex;
+            li {
+                position: relative;
+                height: 100%;
+                margin-right: 70px;
+                a {
+                    font-family: pb;
+                    @include midFlex;
+                    height: 100%;
+                    color: $white-color;
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    text-align: center;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        height: 2px;
+                        background: $white-cl;
+                        width: 100%;
+                        bottom: 20px;
+                        left: 0;
+                        @include transform(scaleX(0));
+                        transform-origin: right center;
+                        @include transition(transform 0.3s);
+                    }
+                    &:hover {
+                        &:after {
+                            @include transform(scaleX(1));
+                            transform-origin: left center;
+                            @include transition(transform 0.3s);
+                        }
+                    }
+                    &.active {
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            height: 2px;
+                            background: $white-cl;
+                            width: 100%;
+                            bottom: 20px;
+                            left: 0;
+                            @include transform(scaleX(1));
+                            transform-origin: left center;
+                            @include transition(transform 0.3s);
+                        }
+                    }
+                }
+            }
+            li:last-child {
+                margin-right: 0;
+            }
+        }
+        .option {
+            height: 100%;
+            display: inline-flex;
+            align-items: center;
+            .lang {
+                height: 100%;
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                color: white;
+                position: relative;
+                cursor: pointer;
+                &__current {
+                    height: 100%;
+                    @include midFlex;
+                    img {
+                        margin-left: 5px;
+                        width: 15px;
+                    }
+                }
+                &__option {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: right;
+                    height: auto;
+                    background: #555454;
+                    padding: 20px;
+                    opacity: 0;
+                    visibility: hidden;
+                    @include transition(opacity 0.3s);
+                    a {
+                        color: $white-cl;
+                        padding: 5px 0;
+                    }
+                }
+                &.active {
+                    .lang__option {
+                        opacity: 1;
+                        visibility: visible;
+                        @include transition(opacity 0.3s);
+                    }
+                }
+            }
+        }
+    }
+    .scroll-bar {
+        width: 0;
+        background: #3ab1e6;
+    }
+    @include sm {
+        .container-fluid {
+            .menu {
+                display: none;
+            }
+            .btnmenu {
+                display: block;
+            }
+        }
+    }
+    @include xs {
+        --height-header: 60px;
+    }
+}

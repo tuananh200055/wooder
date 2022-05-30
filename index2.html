@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tag__name {
+            padding: 10px;
+            background: #ddd;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .tabs {
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .tab {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+        
+        input {
+            width: 100%;
+            height: 60px;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="accrdion">
+        <div class="tag">
+
+            <h3 class="tag__name">Kiến trúc Website, HTML, Photoshop Căn Bản</h3>
+
+            <div class="tag__content">
+                <p>Giới thiệu tổng quan khóa học, hướng dẫn HTML và các thẻ HTML nâng cao, viết HTML chuẩn BEM và SEO, Kiến trúc của một website. Hướng dẫn chia bố cục và thực hành viết HTML cho trang Landing Page.</p>
+            </div>
+        </div>
+        <div class="tag">
+            <h3 class="tag__name">Kiến trúc Website, HTML, Photoshop Căn Bản</h3>
+
+            <div class="tag__content">
+                <p>Giới thiệu tổng quan khóa học, hướng dẫn HTML và các thẻ HTML nâng cao, viết HTML chuẩn BEM và SEO, Kiến trúc của một website. Hướng dẫn chia bố cục và thực hành viết HTML cho trang Landing Page.</p>
+            </div>
+        </div>
+        <div class="tag">
+
+            <h3 class="tag__name">CSS, Flexbox, Grid</h3>
+
+            <div class="tag__content">
+                <p>Giới thiệu tổng quan khóa học, hướng dẫn HTML và các thẻ HTML nâng cao, viết HTML chuẩn BEM và SEO, Kiến trúc của một website. Hướng dẫn chia bố cục và thực hành viết HTML cho trang Landing Page.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <div class="list">
+            <div class="tab">test
+                <span class="remove">x</span>
+            </div>
+            <div class="tab">anh
+                <span class="remove">x</span>
+            </div>
+            <div class="tab">tu doi
+                <span class="remove">x</span>
+            </div>
+        </div>
+        <input type="text" name="tabs">
+    </div>
+    <h2>Form Contact</h2>
+    <form id="form-contact">
+        <div class="form-group">
+            <label>Ho va Ten</label>
+            <input type="text" name="name" value="" class="form-control"></div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" value="" class="form-control"></div>
+        <div class="form-group">
+            <label>So dien thoai</label>
+            <input type="text" name="phone" value="" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Noi dung</label>
+            <textarea name="content" rows="6" class="form-control">
+ </textarea>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btnContact">Lien he</button>
+        </div>
+
+    </form>
+    <script type="text/javascript" src="dest/jsmain.min.js"></script>
+    <script type="text/javascript" src="dest/jswork.js"></script>
+
+</body>
+
+</html>

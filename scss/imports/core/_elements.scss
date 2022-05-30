@@ -1,0 +1,119 @@
+// css button, title, icon, elements...
+img {
+    max-width: 100%;
+}
+
+.big-btn {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 15px 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 2px solid rgb(139, 134, 134);
+    color: white;
+    position: relative;
+    // transition: 0.5s linear;
+    // &:hover {
+    //     transform: scale(0.9);
+    //     transition: 0.5s linear
+    // }
+    @include transition(0.3s);
+    img {
+        @include transition(0.3s);
+        margin-left: 10px;
+    }
+    &:hover {
+        img {
+            margin-left: 30px;
+            @include transition(0.3s);
+        }
+        background-color: $main-color;
+        @include transition(0.3s);
+    }
+}
+
+.btn {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+    @include transition(0.3s);
+    display: flex;
+    align-items: center;
+    &:hover {
+        img {
+            margin-left: 20px;
+            @include transition(0.3s);
+        }
+    }
+    @include sm {
+        margin-bottom: 30px;
+    }
+}
+
+.control__btn {
+    width: 74px;
+    height: 55px;
+    border: 2px solid $white-color;
+    cursor: pointer;
+    position: relative;
+    i {
+        position: absolute;
+        @include mid;
+    }
+}
+
+.btnmenu {
+    z-index: 300;
+    display: none;
+    width: 40px;
+    height: 22px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        display: block;
+        background-color: $main-color;
+        top: 20px;
+        @include transition(0.3s);
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        display: block;
+        height: 3px;
+        background-color: $main-color;
+        top: 10px;
+        @include transition(0.3s);
+    }
+    span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        display: block;
+        background-color: $main-color;
+        @include transition(0.3s);
+    }
+    &.clicked {
+        &::before {
+            opacity: 0;
+        }
+        span {
+            @include transform(rotate(45deg) translate(6px, 8px));
+            @include transition(0.3s);
+        }
+        &::after {
+            @include transform(rotate(-45deg) translate(4px, -8px));
+            @include transition(0.3s);
+        }
+    }
+}
